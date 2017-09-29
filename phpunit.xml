@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="tests/bootstrap.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <php>
+        <ini name="display_errors" value="true"/>
+        <env name="APP_ENV" value="testing"/>
+        <env name="CACHE_DRIVER" value="array"/>
+        <env name="DB_CONNECTION" value="testing"/>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="QUEUE_DRIVER" value="sync"/>
+    </php>
+    <php>
+        <var name="db_dsn" value="mysql:dbname=homestead;host=127.0.0.1"/>
+        <var name="db_username" value="root"/>
+        <var name="db_password" value=""/>
+    </php>
+    <testsuites>
+        <testsuite name="CSV">
+            <directory>./tests/CSV</directory>
+        </testsuite>
+        <testsuite name="User">
+            <directory>./tests/User</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
